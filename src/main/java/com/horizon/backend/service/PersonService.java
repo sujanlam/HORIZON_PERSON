@@ -18,13 +18,13 @@ public class PersonService {
     }
 
     //Get by id
-    public Optional<Person> getById(Long id) {
-        return Optional.ofNullable(personRepository.findById(id).orElseThrow(() -> new PersonNotFoundException("Person with id: " + id + "not found!")));
+    public Person getById(Long id) {
+        return personRepository.findById(id).orElseThrow(() -> new PersonNotFoundException("Person with id: " + id + "not found!"));
     }
 
     //Get by email
-    public Optional<Person> findPersonByEmail(String email) {
-        return Optional.ofNullable(personRepository.findByEmail(email).orElseThrow(() -> new PersonNotFoundException("Person with email: " + email + "not found!")));
+    public Person findPersonByEmail(String email) {
+        return personRepository.findByEmail(email).orElseThrow(() -> new PersonNotFoundException("Person with email: " + email + "not found!"));
     }
 
     //Get by email and country

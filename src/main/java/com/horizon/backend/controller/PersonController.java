@@ -22,14 +22,14 @@ public class PersonController {
 
     //Get by id
     @GetMapping("/id/{id}")
-    public ResponseEntity<Optional<Person>> getPersonById(@PathVariable Long id) {
+    public ResponseEntity<Person> getPersonById(@PathVariable Long id) {
         logger.info("Calling get by Id from controller:");
         return ResponseEntity.ok(personService.getById(id));
     }
 
     //Get by email
     @GetMapping("/email/{email}")
-    public ResponseEntity<Optional<Person>> getPersonById(@PathVariable String email) {
+    public ResponseEntity<Person> getPersonById(@PathVariable String email) {
         return ResponseEntity.ok(personService.findPersonByEmail(email));
     }
 
